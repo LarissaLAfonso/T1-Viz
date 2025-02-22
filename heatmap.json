@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Série Histórica dos Homicídios no Estado de São Paulo",
+    "hconcat": [
+      {
+        "title": {"text": "2010"},
+        "mark": "rect",
+        "encoding": {
+          "x": {"field": "Mes", "type": "nominal", "title": null},
+          "y": {
+            "field": "Regiao",
+            "type": "nominal",
+            "title": "Região",
+            "axis": {"labels": true, "ticks": false}
+          },
+          "color": {
+            "field": "log_taxa_homicidios",
+            "type": "quantitative",
+            "scale": {"scheme": "turbo"},
+            "title": "Logaritmo de\n homicídios a cada\n 1000 habitantes"
+          },
+          "tooltip": [
+            {"field": "Regiao", "type": "nominal", "title": "Região"},
+            {"field": "Mes", "type": "nominal", "title": "Mês"},
+            {"field": "taxa_homicidios_1000", "type": "quantitative", "title": "Homicídios por 1k hab.", "format": ".2f"},
+            {"field": "log_taxa_homicidios", "type": "quantitative", "title": "Log(Homicídios)", "format": ".2f"}
+          ]
+        }
+      },
+      {
+        "title": {"text": "2012"},
+        "mark": "rect",
+        "encoding": {
+          "x": {"field": "Mes", "type": "nominal", "title": null},
+          "y": {
+            "field": "Regiao",
+            "type": "nominal",
+            "title": null,
+            "axis": {"labels": false, "ticks": false}
+          },
+          "color": {
+            "field": "log_taxa_homicidios",
+            "type": "quantitative",
+            "scale": {"scheme": "turbo"},
+            "title": null
+          },
+          "tooltip": [
+            {"field": "Regiao", "type": "nominal", "title": "Região"},
+            {"field": "Mes", "type": "nominal", "title": "Mês"},
+            {"field": "taxa_homicidios_1000", "type": "quantitative", "title": "Homicídios por 1k hab.", "format": ".2f"},
+            {"field": "log_taxa_homicidios", "type": "quantitative", "title": "Log(Homicídios)", "format": ".2f"}
+          ]
+        }
+      }
+    ],
+    "resolve": {"scale": {"color": "shared"}}
+  }
+  
